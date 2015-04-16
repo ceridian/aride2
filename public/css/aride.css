@@ -57,10 +57,3 @@
   background-size: cover;
   -o-background-size: cover;
 }
-.brand-heading {
-  text-align: center;
-  background: url(../img/header-bg.jpg) no-repeat bottom center scroll;
-  border: 2px solid white;
-  border-radius: 15px;
-  padding: 10px;
-}
