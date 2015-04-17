@@ -98,8 +98,8 @@ module.exports = function(passport) {
 
                         // create the user
                         var newUser            = new User();
-                        newUser.first          = parsed.firs;
-                        newUser.last           = parsed.last;
+                        newUser.first          = parsed.info.first;
+                        newUser.last           = parsed.info.last;
                         newUser.local.email    = email;
                         newUser.local.password = newUser.generateHash(password);
 
