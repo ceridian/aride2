@@ -68,7 +68,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
           <div class="navbar-header">
             <button type="button" data-toggle="collapse" data-target="#searchBar" class="navbar-toggle collapsed"></button><a href="#" class="navbar-brand">Where To? </a>
           </div>
-          <div id="searchBar" class="collapse navbar-collapse">
+          <div id="searchBar" class="collapse navbar-collapse row">
             <form action="/route" method="post">
               <div class="form-group">
                   <input type="text" class="form-control" name="to" placeholder="To">
@@ -77,7 +77,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                   <input type="text" class="form-control" name="from" placeholder="From">
               </div>
 
-              <button type="submit" class="btn btn-warning btn-lg">Calc</button>
+              <button class="btn btn-warning btn-lg" onClick="calcRoute()">Calc</button>
             </form>
           </div>
         </div>
