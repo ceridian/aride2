@@ -24,7 +24,12 @@
           <%}%>
         </li>
         <li>
-          <a href="/signup">Register</a>
+          <%if (!auth){%>
+            <a href="/signup">Register</a>
+          <%}%>
+          <%if (auth){%>
+            <a href="/profile"><%= user %></a>
+          <%}%>
         </li>
       </ul>
     </div>
