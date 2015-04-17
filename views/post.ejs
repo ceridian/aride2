@@ -62,7 +62,20 @@
 </head>
 <body>
   <div id="map-canvas"></div>
-  <nav role="navigation" class="navbar navbar-inverse navbar-fixed-bottom">
+  <div id="postBar">
+    <ul class="nav nav-pills nav-stacked">
+      <li role="presentation">
+        <input id="to" type="text" class="form-control" name="to" placeholder="To">
+      </li>
+      <li role="presentation">
+        <input type="text" class="form-control" name="from" placeholder="From">
+      </li>
+      <li role="presentation">
+        <button class="btn btn-warning btn-lg" onClick="calcRoute()">Calc</button>
+      </li>
+    </ul>
+  </div>
+  <!--<nav role="navigation" class="navbar navbar-inverse navbar-fixed-bottom">
     <div class="container-fluid">
       <div id="searchBar" class="collapse navbar-collapse">
         <div class="navbar-header">
@@ -77,6 +90,6 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav>-->
 </body>
 </html>
