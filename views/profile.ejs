@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Node Authentication</title>
+    <title>Aride</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <style>
@@ -9,6 +9,23 @@
     </style>
 </head>
 <body>
+<nav role="navigation" class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" data-toggle="collapse" data-target="#topNav" class="navbar-toggle collapsed"></button><a href="/" class="navbar-brand">Aride </a>
+    </div>
+    <div id="topNav" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+        <li>
+          <a href="/profile"><%= user.name %></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="container">
 
     <div class="page-header text-center">
