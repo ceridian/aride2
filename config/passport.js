@@ -74,7 +74,7 @@ module.exports = function(passport) {
         passwordField : 'password',
         passReqToCallback : true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
     },
-    function(req, email, password, done) {
+    function(req, email, password, first, last, done) {
         if (email)
             email = email.toLowerCase(); // Use lower-case e-mails to avoid case-sensitive e-mail matching
 
@@ -114,7 +114,7 @@ module.exports = function(passport) {
                 User.findOne({ 'local.email' :  email }, function(err, user) {
                     if (err)
                         return done(err);
-                    
+
                     if (user) {
                         return done(null, false, req.flash('loginMessage', 'That email is already taken.'));
                         // Using 'loginMessage instead of signupMessage because it's used by /connect/local'
@@ -125,7 +125,7 @@ module.exports = function(passport) {
                         user.save(function (err) {
                             if (err)
                                 return done(err);
-                            
+
                             return done(null,user);
                         });
                     }
@@ -173,7 +173,7 @@ module.exports = function(passport) {
                             user.save(function(err) {
                                 if (err)
                                     return done(err);
-                                    
+
                                 return done(null, user);
                             });
                         }
@@ -191,7 +191,7 @@ module.exports = function(passport) {
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
-                                
+
                             return done(null, newUser);
                         });
                     }
@@ -209,7 +209,7 @@ module.exports = function(passport) {
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
+
                     return done(null, user);
                 });
 
@@ -251,7 +251,7 @@ module.exports = function(passport) {
                             user.save(function(err) {
                                 if (err)
                                     return done(err);
-                                    
+
                                 return done(null, user);
                             });
                         }
@@ -269,7 +269,7 @@ module.exports = function(passport) {
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
-                                
+
                             return done(null, newUser);
                         });
                     }
@@ -287,7 +287,7 @@ module.exports = function(passport) {
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
+
                     return done(null, user);
                 });
             }
@@ -330,7 +330,7 @@ module.exports = function(passport) {
                             user.save(function(err) {
                                 if (err)
                                     return done(err);
-                                    
+
                                 return done(null, user);
                             });
                         }
@@ -347,7 +347,7 @@ module.exports = function(passport) {
                         newUser.save(function(err) {
                             if (err)
                                 return done(err);
-                                
+
                             return done(null, newUser);
                         });
                     }
@@ -365,7 +365,7 @@ module.exports = function(passport) {
                 user.save(function(err) {
                     if (err)
                         return done(err);
-                        
+
                     return done(null, user);
                 });
 
