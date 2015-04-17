@@ -14,24 +14,26 @@
       <button type="button" data-toggle="collapse" data-target="#topNav" class="navbar-toggle collapsed"></button><a href="/" class="navbar-brand">Aride </a>
     </div>
     <div id="topNav" class="collapse navbar-collapse">
-      <div class="nav navbar-nav">
-
+      <ul class="nav navbar-nav navbar-left">
+        <li>
           <%if (auth){%>
             <a href="/logout">Logout</a>
           <%}%>
           <%if (!auth){%>
             <a  href="/login">Login</a>
           <%}%>
-
-      </div>
-      <div class="nav navbar-nav navbar-right">
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
           <%if (!auth){%>
             <a href="/signup">Register</a>
           <%}%>
           <%if (auth){%>
             <a href="/profile"><%= user.first %> <%= user.last %></a>
           <%}%>
-      </div>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
