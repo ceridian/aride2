@@ -76,7 +76,6 @@ module.exports = function(passport) {
     },
     function(req, email, password, done) {
         var body = req.body;
-        var parsed = JSON.parse(body);
         console.log(parsed);
 
         if (email)
@@ -98,8 +97,8 @@ module.exports = function(passport) {
 
                         // create the user
                         var newUser            = new User();
-                        newUser.info.first          = parsed.first;
-                        newUser.info.last           = parsed.last;
+                        newUser.first          = body.first;
+                        newUser.last           = body.last;
                         newUser.local.email    = email;
                         newUser.local.password = newUser.generateHash(password);
 
