@@ -4,7 +4,7 @@
 // get all the tools we need
 var express  = require('express');
 var app      = express();
-var port     = process.env.PORT || 443;
+var port     = process.env.PORT || 80;
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
 
 // launch ======================================================================
-//app.listen(port);
-var server = https.createServer(options, app);
-server.listen(port);
+app.listen(port);
+//var server = https.createServer(options, app);
+//server.listen(port);
 console.log('The magic happens on port ' + port);
