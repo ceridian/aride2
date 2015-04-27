@@ -9,6 +9,21 @@ module.exports = function(app, passport) {
       res.render('index.ejs', {auth: auth, user: user});
     });
 
+    // PARKING
+    app.get('/park', function(req, res) {
+      var auth = req.isAuthenticated();
+      var user = req.user;
+      res.render('park.ejs', {auth: auth, user: user});
+    });
+
+    // RENTING
+    app.get('/rent', function(req, res) {
+      var auth = req.isAuthenticated();
+      var user = req.user;
+      res.render('rent.ejs', {auth: auth, user: user});
+    });
+
+
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
         console.log(req.user);
